@@ -1,0 +1,120 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        -moz-background-clip:border-box ;
+      background: radial-gradient(circle, #111 0%, #000 100%);
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #999, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glassy-container {
+      position: relative;
+      margin: 100px auto;
+      width: 90%;
+      max-width: 800px;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      animation: float 6s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+      transition: transform 0.5s ease;
+    }
+
+    .glassy-container:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      }
+      100% {
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      border: 1px solid #fff;
+      transition: 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .buttons a:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-120vh) scale(1.5); }
+    }
